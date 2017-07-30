@@ -10,16 +10,19 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="connection.url">jdbc:oracle:thin:@10.40.34.76:1521:XE</property>
+        <property name="connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
         <property name="connection.username">SYSTEM</property>
         <property name="connection.password">1234</property>
         <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
 	    <property name="hibernate.default_schema">ALI</property>
 	    <property name="show_sql">true</property>
-	    <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
-        
+	    <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>    
         <mapping resource="Emp.hbm.xml"/>
-        
+     
+        <!--  creating table
+        <property name="hbm2ddl.auto">create</property>      //her kayıt eklemede tablodaki verileri siler ve yeni tek kayıtlı tablo oluşturur.
+         veya
+        <property name="hbm2ddl.auto">update</property>       -->
 
     </session-factory>
 
